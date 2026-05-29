@@ -62,7 +62,7 @@ export default function Profile() {
 
   return (
     <form className="admin-card" onSubmit={handleSubmit}>
-      <h2 className="font-display text-3xl font-bold text-ink">Profile</h2>
+      <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">Profile</h2>
       <p className="mt-2 text-sm leading-7 text-muted">
         Form demo untuk data profile. Pada Supabase, data detail masuk ke tabel profiles.
       </p>
@@ -95,7 +95,7 @@ export default function Profile() {
       {error && <p className="mt-4 rounded-2xl bg-[#C75146]/10 p-3 text-sm font-bold text-[#C75146]">{error}</p>}
       {message && <p className="mt-4 rounded-2xl bg-sage/10 p-3 text-sm font-bold text-sage">{message}</p>}
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-        <Button type="submit">{saving ? "Saving..." : "Update Profile"}</Button>
+        <Button className="w-full sm:w-auto" type="submit">{saving ? "Saving..." : "Update Profile"}</Button>
         <Button variant="secondary" type="button" onClick={handleLogout}>
           Logout
         </Button>

@@ -20,13 +20,36 @@ export default function CustomerLayout() {
 
 export function CustomerShell() {
   return (
-    <section className="section-shell py-10">
-      <div className="mb-8">
+    <section className="section-shell py-8 sm:py-10">
+      <div className="mb-6 sm:mb-8">
         <p className="eyebrow mb-3">Customer Area</p>
-        <h1 className="font-display text-4xl font-bold text-ink sm:text-5xl">My Account</h1>
+        <h1 className="font-display text-3xl font-bold text-ink sm:text-5xl">My Account</h1>
       </div>
-      <div className="grid gap-6 lg:grid-cols-[260px_1fr]">
-        <aside className="rounded-[2rem] border border-linen bg-white p-3 shadow-card lg:self-start">
+
+      <nav className="mb-5 flex gap-2 overflow-x-auto pb-2 lg:hidden">
+        {links.map((item) => {
+          const Icon = item.icon;
+
+          return (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.to === "/account"}
+              className={({ isActive }) =>
+                `inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm font-bold ${
+                  isActive ? "bg-clay text-white" : "border border-linen bg-white text-muted"
+                }`
+              }
+            >
+              <Icon size={16} />
+              {item.label}
+            </NavLink>
+          );
+        })}
+      </nav>
+
+      <div className="grid gap-6 lg:grid-cols-[260px_minmax(0,1fr)]">
+        <aside className="hidden rounded-[2rem] border border-linen bg-white p-3 shadow-card lg:block lg:self-start">
           <nav className="grid gap-2">
             {links.map((item) => {
               const Icon = item.icon;
@@ -48,7 +71,8 @@ export function CustomerShell() {
             })}
           </nav>
         </aside>
-        <div>
+
+        <div className="min-w-0">
           <Outlet />
         </div>
       </div>

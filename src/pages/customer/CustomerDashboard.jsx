@@ -34,7 +34,7 @@ export default function CustomerDashboard() {
         <StatsCard label="Profile" value="80%" helper="Complete data" icon={User} />
       </div>
       <div className="admin-card">
-        <h3 className="mb-4 font-display text-3xl font-bold text-ink">Recent Orders</h3>
+        <h3 className="mb-4 font-display text-2xl font-bold text-ink sm:text-3xl">Recent Orders</h3>
         <OrderTable orders={orders.slice(0, 2)} />
       </div>
     </div>

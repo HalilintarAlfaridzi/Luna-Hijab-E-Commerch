@@ -34,7 +34,7 @@ export default function SavedAddresses() {
               )}
             </div>
             <p className="mt-4 text-sm leading-7 text-muted">{address.detail}</p>
-            <div className="mt-5 flex gap-2">
+            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
               <Button variant="secondary" size="sm">Edit</Button>
               <Button variant="ghost" size="sm">Delete</Button>
             </div>
@@ -43,7 +43,7 @@ export default function SavedAddresses() {
       </div>
 
       <form className="admin-card">
-        <h2 className="font-display text-3xl font-bold text-ink">Add Address</h2>
+        <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">Add Address</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <Input label="Recipient name" />
           <Input label="Phone" />
@@ -56,7 +56,7 @@ export default function SavedAddresses() {
           <span className="mb-2 block text-sm font-bold text-ink">Full address</span>
           <textarea className="input-field min-h-28 resize-none" />
         </label>
-        <Button className="mt-5">Save Address</Button>
+        <Button className="mt-5 w-full sm:w-auto">Save Address</Button>
       </form>
     </div>
   );
