@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #2b2118;
+  background: #faf7f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(192, 132, 151, 0.2), transparent 26rem),
+    radial-gradient(circle at 100% 16%, rgba(216, 191, 163, 0.45), transparent 24rem),
+    #faf7f2;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply text-xs font-extrabold uppercase tracking-[0.32em] text-clay;
+  }
+
+  .glass-card {
+    @apply border border-white/70 bg-white/70 shadow-card backdrop-blur-xl;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-linen bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-clay focus:ring-4 focus:ring-clay/10;
+  }
+
+  .admin-card {
+    @apply rounded-[1.75rem] border border-linen bg-white p-5 shadow-card;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
